@@ -7,7 +7,6 @@
 
 Here are some simple but good scripts for different games
 # [Random Battlegrounds](https://www.roblox.com/games/104710166405954/Random-Battlegrounds)
-## Shortened Script
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/nikoladhima/Simple-Good-Scripts/refs/heads/main/RandomBattlegrounds.lua"))()
 ```
