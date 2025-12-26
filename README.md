@@ -1,6 +1,6 @@
 ## Simple-Good-Scripts
 > [!IMPORTANT]
-> **Join my [discord server](https://discord.gg/vAWJMYJYcR) if you find any bugs or have issues with the scripts**
+> **Join my [discord server](https://discord.gg/DwRT2nH93D) if you find any bugs or have issues with the scripts**
 
 > [!WARNING]
 > **These scripts are not tested regularly so expect bugs, it would be appriciated to tell me if it works once you tested one of these scripts**
@@ -13,5 +13,5 @@ Here are some simple but good scripts for diffrent games
 
 ## Shortened Script
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/NaikoScript/Simple-Good-Scripts/main/GunGrounds"))(Configuration)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/nikoladhima/Simple-Good-Scripts/refs/heads/main/RandomBattlegrounds.lua"))()
 ```
