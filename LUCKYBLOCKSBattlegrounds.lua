@@ -14,14 +14,27 @@ local SelectedBlock = "LuckyBlock"
 Main:CreateSelector("Select Block", function(SelectedOption)
     SelectedBlock = SelectedOption
 end, function()
-    return {"LuckyBlock", "SuperBlock", "DiamondBlock", "RainbowBlock", "GalaxyBlock"}
+    return {"LuckyBlock", "SuperBlock", "DiamondBlock", "RainbowBlock", "GalaxyBlock", "VoidBlock"}
 end, "LuckyBlock")
 
 local ReplicatedStorage = cloneref(game:GetService("ReplicatedStorage"))
 Main:CreateButton("Spawn Block", function()
-    local RemoteEvent = ReplicatedStorage:FindFirstChild("Spawn" .. SelectedBlock)
-    if RemoteEvent then
-        RemoteEvent:FireServer()
+    if SelectedBlock == "VoidBlock" then
+        local RainblowBlock = ReplicatedStorage:FindFirstChild("SpawnRainbowBlock")
+        local GalaxyBlock = ReplicatedStorage:FindFirstChild("SpawnGalaxyBlock")
+        if RainblowBlock and GalaxyBlock then
+            for _ = 1, 4 do
+                GalaxyBlock:FireServer()
+                RainblowBlock:FireServer()
+            end
+            RainblowBlock:FireServer()
+            RainblowBlock:FireServer()
+        end
+    else
+        local RemoteEvent = ReplicatedStorage:FindFirstChild("Spawn" .. SelectedBlock)
+        if RemoteEvent then
+            RemoteEvent:FireServer()
+        end
     end
 end)
 
