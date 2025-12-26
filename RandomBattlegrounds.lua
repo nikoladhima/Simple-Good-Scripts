@@ -76,3 +76,67 @@ Main:CreateButton("Unload Script", function()
     LibraryGui:CleanUp()
     Running = false
 end)
+
+local FileFunctions = {
+    makefolder = makefolder or make_folder or createfolder or create_folder or function(...)
+        return true
+    end,
+    isfolder = isfolder or is_folder or function(...)
+        return false
+    end,
+    isfile = isfile or is_file or function(...)
+        return false
+    end,
+    readfile = readfile or read_file or readfileasync or read_file_async or function(...)
+        return "{}"
+    end,
+    writefile = writefile or write_file or writefileasync or write_file_async or function(...)
+        return true
+    end,
+}
+
+if not FileFunctions.isfolder("combat.cc") then
+	FileFunctions.makefolder("combat.cc")
+end
+
+task.spawn(function()
+	local httprequest = httprequest or http_request or request or HttpPost or (http and http.request) or (syn and syn.request) or function(...)
+		return (...)
+	end
+    local HttpService = cloneref(game:GetService("HttpService"))
+
+	local function Invite(InviteCode)
+		httprequest({
+			Url = 'http://127.0.0.1:6463/rpc?v=1',
+			Method = 'POST',
+			Headers = {
+				['Content-Type'] = 'application/json',
+				Origin = 'https://discord.com'
+			},
+			Body = HttpService:JSONEncode({
+				cmd = 'INVITE_BROWSER',
+				nonce = HttpService:GenerateGUID(false),
+				args = {code = InviteCode}
+			})
+		})
+	end
+
+	local VerifyChannelInvite = "DwRT2nH93D"
+	local RulesChannelInvite = "jjEtFhA8PA"
+
+	if FileFunctions.isfile("combat.cc/code") then
+		if FileFunctions.readfile("combat.cc/code") == VerifyChannelInvite then
+			FileFunctions.writefile("combat.cc/code", RulesChannelInvite)
+		elseif FileFunctions.readfile("combat.cc/code") == RulesChannelInvite then
+			Invite(RulesChannelInvite)
+			return
+		else
+			FileFunctions.writefile("combat.cc/code", RulesChannelInvite)
+			Invite(RulesChannelInvite)
+			return
+		end
+	else
+		FileFunctions.writefile("combat.cc/code", VerifyChannelInvite)
+	end
+	Invite(VerifyChannelInvite)
+end)
