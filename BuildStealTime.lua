@@ -58,7 +58,7 @@ if firetouchinterest then
             return
         end
 
-        local Tool = LocalCharacter and LocalCharacter:FindFirstChildWhichIsA("Tool")
+        local Tool = LocalCharacter and LocalCharacter:FindFirstChildOfClass("Tool")
 
         if not Tool then
             return
@@ -108,7 +108,7 @@ if firetouchinterest then
                 return
             end
 
-            local Tool = LocalCharacter and LocalCharacter:FindFirstChildWhichIsA("Tool")
+            local Tool = LocalCharacter and LocalCharacter:FindFirstChildOfClass("Tool")
 
             if not Tool then
                 return
