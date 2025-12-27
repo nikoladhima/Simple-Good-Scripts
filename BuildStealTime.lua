@@ -1,3 +1,4 @@
+local Running = true
 local cloneref = cloneref or clone_ref or clonereference or clone_reference or function(...)
 	return (...)
 end
@@ -30,6 +31,25 @@ if firetouchinterest then
 
     local Players = cloneref(game:GetService("Players"))
     local LocalPlayer = Players.LocalPlayer
+
+    task.spawn(function()
+        while task.wait(1) do
+            if not Running then
+                break
+            end
+            local Character = LocalPlayer.Character
+            if Character then
+                local AntiCheat = Character:FindFirstChild("Anti-Exploit")
+                if AntiCheat then
+                    AntiCheat:Destroy()
+                end
+                AntiCheat = Character:FindFirstChild("anticheat")
+                if AntiCheat then
+                    AntiCheat:Destroy()
+                end
+            end
+        end
+    end)
 
     Main:CreateButton("Hit All [Hold Tool]", function()
         local LocalCharacter = LocalPlayer.Character
@@ -163,10 +183,11 @@ if firetouchinterest then
         end
     end, false)
 else
-    warn("Kill All & Grab Time Objects not supported.")
+    warn("Executor not supported.")
 end
 
 Main:CreateButton("Unload Script", function()
+    Running = false
     LibraryGui:CleanUp()
 end)
 
