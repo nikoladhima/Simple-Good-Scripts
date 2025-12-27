@@ -40,7 +40,10 @@ end)
 
 local LocalPlayer = cloneref(game:GetService("Players")).LocalPlayer
 Main:CreateButton("Clear Tools", function()
-    LocalPlayer.Backpack:ClearAllChildren()
+    local Backpack = LocalPlayer.Backpack
+    if Backpack then
+        Backpack:ClearAllChildren()
+    end
     local Character = LocalPlayer.Character
     if Character then
         for _,Child in ipairs(Character:GetChildren()) do
