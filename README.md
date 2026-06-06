@@ -3,7 +3,7 @@
 > **Join my [discord server](https://discord.gg/DwRT2nH93D) if you find any bugs or have issues with the scripts**
 
 > [!WARNING]
-> **These scripts are not tested regularly so expect bugs, it would be appriciated to tell me if it works once you tested one of these scripts**
+> **These scripts are not tested regularly so expect bugs, it would be appreciated to tell me if it works once you tested one of these scripts**
 
 Here are some simple but good scripts for different games:
 # [Build & Steal Time](https://www.roblox.com/games/130589509656660/Build-Steal-Time)
