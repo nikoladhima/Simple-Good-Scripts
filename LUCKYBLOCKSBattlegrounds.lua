@@ -7,7 +7,7 @@ local LibraryGui = loadstring(game:HttpGet("https://gitlab.com/0x45.xyz/droplib/
    ["AccentColor"] = Color3.new(0.6,0,0)
 }, cloneref(game:GetService("CoreGui")))
 
-local Main = LibraryGui:CreateCategory("Main")
+local Main = LibraryGui:CreateCategory(".gg/DsGCKtxxEN for more scripts.")
 
 local SelectedBlock = "LuckyBlock"
 
