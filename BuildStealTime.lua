@@ -4,7 +4,7 @@ if not firetouchinterest then
 end
 
 local Running = true
-local LibraryGui = loadstring(game:HttpGet("https://gitlab.com/0x45.xyz/droplib/-/raw/master/drop-minified.lua"))():Init({
+local LibraryGui = loadstring(game:HttpGet("https://raw.githubusercontent.com/nikoladhima/Simple-Good-Scripts/refs/heads/main/Library.luau"))():Init({
    ["HeaderWidth"] = 250,
    ["AccentColor"] = Color3.new(0.6,0,0)
 }, (cloneref or clone_ref or clonereference or clone_reference or function(Object)
